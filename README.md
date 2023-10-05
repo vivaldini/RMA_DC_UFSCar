@@ -216,30 +216,30 @@ To add the directory to models and worlds:
 
 ### Package The SuperMegaBot 
 
-# source ROS1 Noetic
+#### source ROS1 Noetic
 source /opt/ros/noetic/setup.bash
-# create the directories
+#### create the directories
 mkdir -p /home/$USER/smp_workspace/src
 cd /home/$USER/smp_workspace/
-# initilize the catkin workspace
+#### initilize the catkin workspace
 catkin init
 catkin config --extend /opt/ros/noetic
 catkin config -DCMAKE_BUILD_TYPE=Release
-# Navigate to the directory of src to clone the SuperMegaBot_SMB project
+#### Navigate to the directory of src to clone the SuperMegaBot_SMB project
 cd /home/$USER/smp_workspace/src
 git clone https://github.com/rrdpereira/SuperMegaBot_SMB.git
-# build the project
+#### build the project
 cd /home/$USER/smp_workspace/
 catkin build
-# source your catkin workspace
+#### source your catkin workspace
 source /home/$USER/smp_workspace/devel/setup.bash
 
-# (optinal) may you found some errors, so you can use the "Magic" of rosdep
+#### (optinal) may you found some errors, so you can use the "Magic" of rosdep
 cd /home/$USER/smp_workspace/src
 rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
 cd /home/$USER/smp_workspace/
 catkin build
-# source your catkin worksapce
+#### source your catkin worksapce
 source /home/$USER/smp_workspace/devel/setup.bash
 
 
