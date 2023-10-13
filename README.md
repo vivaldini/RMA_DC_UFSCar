@@ -41,11 +41,11 @@ Create a bootable USB drive using a tool like "Rufus" on Windows or "Etcher" on 
 ```
 **0.3: Installing Ubuntu 20.04**
 ```bash
-0.3.1 - The Ubuntu Live USB will start. You can try Ubuntu without installing it, but for installation, click the "Install Ubuntu" icon on the desktop.
+0.3.1  The Ubuntu Live USB will start. You can try Ubuntu without installing it, but for installation, click the "Install Ubuntu" icon on the desktop.
 
-0.3.2 -Follow the on-screen instructions to select your language, time zone, and keyboard layout.
+0.3.2 Follow the on-screen instructions to select your language, time zone, and keyboard layout.
 
-0.3.3 -When you reach the disk partitioning screen, you have the following options:
+0.3.3 When you reach the disk partitioning screen, you have the following options:
 
    "Erase disk and install Ubuntu": This option will erase all contents of the disk and install Ubuntu. Use this option if you no longer need any existing operating system.
  
@@ -53,11 +53,11 @@ Create a bootable USB drive using a tool like "Rufus" on Windows or "Etcher" on 
   
    "Something else": If you want to configure partitions manually, you can select this option.
 
-0.3.4 -Follow the instructions to create a user account, set a password, and choose a computer name.
+0.3.4 Follow the instructions to create a user account, set a password, and choose a computer name.
 
-0.3.5 -Complete the installation process and restart your computer when prompted.
+0.3.5 Complete the installation process and restart your computer when prompted.
 
-0.3.6 -After restarting, you will be running **Ubuntu 20.04**. You can log in with the user account you created during the installation.
+0.3.6 After restarting, you will be running **Ubuntu 20.04**. You can log in with the user account you created during the installation.
 ```
 
 ## Step 1 - Preparing the Environment 
@@ -140,8 +140,12 @@ Ensure you have the necessary tools installed for a smooth installation. Run the
 
 ```bash
 sudo apt-get update -y
-sudo apt-get install -y nautilus-open-terminal
+```
 
+```bash
+sudo apt-get install -y nautilus-open-terminal
+```
+```bash
 sudo apt-get install ssh libjpeg-dev libpng-dev libtiff-dev libx11-dev libavformat-dev libavdevice-dev libavcodec-dev libavutil-dev libswresample-dev libglu-dev libdc1394-22-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev python-pip3 git gitman tmux tmuxinator
 
 ```
@@ -167,9 +171,13 @@ Install the Robot Operating System (Noetic):
 
 ```bash
 curl https://ctu-mrs.github.io/ppa-unstable/add_ros_ppa.sh | bash
+```
+```bash
 sudo apt install ros-noetic-desktop-full
 ```
 Configure your ROS environment [here](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
+
+
 
 ## Step 3- Instal the MRS System
 
@@ -177,15 +185,15 @@ Follow the instructions below to install the MRS System or go to the webpage [he
 
 Select which version of the MRS UAV System you want to install.
 
-For the stable (https://github.com/ctu-mrs/ppa-stable) version, add the stable PPA:
+For the [stable](https://github.com/ctu-mrs/ppa-stable) version, add the stable PPA:
 
 ```bash
 curl https://ctu-mrs.github.io/ppa-stable/add_ppa.sh | bash
 ```
-For unstable (https://github.com/ctu-mrs/ppa-unstable) (nightly-build) of the system, add the unstable PPA:
-
+For [unstable](https://github.com/ctu-mrs/ppa-unstable) (nightly-build) of the system, add the unstable PPA:
+```bash
 curl https://ctu-mrs.github.io/ppa-unstable/add_ppa.sh | bash
-
+```
 
 ```bash
 sudo apt install ros-noetic-mrs-uav-system-full
