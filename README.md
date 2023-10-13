@@ -138,11 +138,14 @@ sudo reboot
 ### Install Dependencies:
 Ensure you have the necessary tools installed for a smooth installation. Run these commands:
 
-```bash 
-sudo apt-get install nautilus-open-terminal ssh libjpeg-dev libpng-dev libtiff-dev libx11-dev libavformat-dev libavdevice-dev libavcodec-dev libavutil-dev libswresample-dev libglu-dev libdc1394-22-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev python-pip3 git gitman tmux tmuxinator
+```bash
+sudo apt-get update -y
+sudo apt-get install -y nautilus-open-terminal
+
+sudo apt-get install ssh libjpeg-dev libpng-dev libtiff-dev libx11-dev libavformat-dev libavdevice-dev libavcodec-dev libavutil-dev libswresample-dev libglu-dev libdc1394-22-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev python-pip3 git gitman tmux tmuxinator
 
 ```
-
+Note. Case error check the package.
 ** Updating pip** 
 
 To ensure you have the latest version of pip, you can run the following command:
@@ -158,31 +161,43 @@ pip install numpy scipy scikit-learn scikit-image
 With the environment set up and graphics drivers, you're now ready to install the MRS System.
 
 
-## Step 2 - Instal MRS System
+## Step 2 - Instal the ROS Noetic
 
-Follow the instructions [here](https://github.com/ctu-mrs/mrs_uav_system#installation) (on Installation topic) to install MRS System or use the commands:
+Install the Robot Operating System (Noetic):
 
-```bash 
-cd /tmp
-echo '
-GIT_PATH=~/git
-mkdir -p $GIT_PATH
-cd $GIT_PATH
-sudo apt-get -y install git
-git clone https://github.com/ctu-mrs/mrs_uav_system
-cd mrs_uav_system
-git checkout master
-git pull
-./install.sh -g $GIT_PATH
-source ~/.bashrc' > clone.sh && source clone.sh
+```bash
+curl https://ctu-mrs.github.io/ppa-unstable/add_ros_ppa.sh | bash
+sudo apt install ros-noetic-desktop-full
 ```
-## Step 3 - Upload class's package
+Configure your ROS environment [here](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
+
+## Step 3- Instal the MRS System
+
+Follow the instructions below to install the MRS System or go to the webpage [here](https://github.com/ctu-mrs/mrs_uav_system#installation) (on Installation topic):
+
+Select which version of the MRS UAV System you want to install.
+
+For the stable (https://github.com/ctu-mrs/ppa-stable) version, add the stable PPA:
+
+```bash
+curl https://ctu-mrs.github.io/ppa-stable/add_ppa.sh | bash
+```
+For unstable (https://github.com/ctu-mrs/ppa-unstable) (nightly-build) of the system, add the unstable PPA:
+
+curl https://ctu-mrs.github.io/ppa-unstable/add_ppa.sh | bash
+
+
+```bash
+sudo apt install ros-noetic-mrs-uav-system-full
+```
+
+## Step 4 - Upload class's package
 
 ### Install Dependencies:
 Ensure you have the necessary tools installed for a smooth installation. Run these commands:
 
 ```bash 
-sudo apt-get install nautilus-open-terminal ssh libjpeg-dev libpng-dev libtiff-dev libx11-dev libavformat-dev libavdevice-dev libavcodec-dev libavutil-dev libswresample-dev libglu-dev libdc1394-22-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev python-pip3 git gitman tmux tmuxinator
+
 sudo apt-get install ros-noetic-amcl ros-noetic-costmap-converter ros-noetic-depthimage-to-laserscan ros-noetic-dynamic-reconfigure ros-noetic-ddynamic-reconfigure ros-noetic-ddynamic-reconfigure-dbgsym ros-noetic-ddynamic-reconfigure-python ros-noetic-geometry2 ros-noetic-hector-slam ros-noetic-move-base ros-noetic-move-base-flex ros-noetic-navigation ros-noetic-openslam-gmapping ros-noetic-rplidar-ros ros-noetic-slam-gmapping ros-noetic-spatio-temporal-voxel-layer ros-noetic-teb-local-planner ros-noetic-teleop-twist-keyboard ros-noetic-teleop-twist-joy ros-noetic-urg-node ros-noetic-rtabmap ros-noetic-rtabmap-ros ros-noetic-octomap ros-noetic-octomap-ros ros-noetic-octomap-rviz-plugins ros-noetic-octomap-server ros-noetic-octovis ros-noetic-imu-filter-madgwick ros-noetic-robot-localization ros-noetic-robot-pose-ekf ros-noetic-pointcloud-to-laserscan ros-noetic-rosbridge-server ros-noetic-map-server ros-noetic-realsense2-camera ros-noetic-realsense2-description ros-noetic-cmake-modules ros-noetic-velodyne-gazebo-plugins ros-noetic-ompl ros-noetic-navfn ros-noetic-dwa-local-planner ros-noetic-global-planner ros-noetic-costmap-2d ros-noetic-robot-self-filter ros-noetic-ros-numpy ros-noetic-pcl-ros ros-noetic-pcl-conversions ros-noetic-grid-map-costmap-2d ros-noetic-grid-map-ros ros-noetic-grid-map-filters ros-noetic-grid-map-visualization ros-noetic-tf2-tools pcl-tools python3-vcstool python3-catkin-tools python3-catkin-lint python3-pip python3-rosdep ros-noetic-gazebo-plugins ros-noetic-hector-gazebo ros-noetic-hector-gazebo-plugins
 ```
 
