@@ -165,7 +165,7 @@ pip install numpy scipy scikit-learn scikit-image
 With the environment set up and graphics drivers, you're now ready to install the MRS System.
 
 
-## Step 2 - Instal the ROS Noetic
+## Step 2 - Install the ROS Noetic
 
 Install the Robot Operating System (Noetic):
 
@@ -175,11 +175,12 @@ curl https://ctu-mrs.github.io/ppa-unstable/add_ros_ppa.sh | bash
 ```bash
 sudo apt install ros-noetic-desktop-full
 ```
+
 Configure your ROS environment [here](https://github.com/vivaldini/RMA_DC_UFSCar/blob/main/ROS_Noetic/README.md)
 
 
 
-## Step 3- Instal the MRS System
+## Step 3- Install the MRS System
 
 Follow the instructions below to install the MRS System or go to the webpage [here](https://github.com/ctu-mrs/mrs_uav_system#installation) (on Installation topic):
 
@@ -198,6 +199,13 @@ curl https://ctu-mrs.github.io/ppa-unstable/add_ppa.sh | bash
 ```bash
 sudo apt install ros-noetic-mrs-uav-system-full
 ```
+
+Start the example Gazebo simulation session, to check your installation:
+
+```bash
+roscd mrs_uav_gazebo_simulation/tmux/one_drone
+./start.sh
+```bash
 
 ## Step 4 - Upload class's package
 
@@ -240,7 +248,7 @@ To add the directory to models and worlds:
 
 ### Package The SuperMegaBot 
 
-#### source ROS1 Noetic
+#### source ROS Noetic
 ```bash
 source /opt/ros/noetic/setup.bash
 ```
@@ -249,7 +257,7 @@ source /opt/ros/noetic/setup.bash
 mkdir -p /home/$USER/smp_workspace/src
 cd /home/$USER/smp_workspace/
 ```
-#### initilize the catkin workspace
+#### initialize the catkin workspace
 ```bash
 catkin init
 catkin config --extend /opt/ros/noetic
@@ -260,7 +268,7 @@ catkin config -DCMAKE_BUILD_TYPE=Release
 cd /home/$USER/smp_workspace/src
 git clone https://github.com/rrdpereira/SuperMegaBot_SMB.git
 ```
-#### build the project
+#### Build the project
 ```bash
 cd /home/$USER/smp_workspace/
 catkin build
@@ -269,7 +277,7 @@ catkin build
 ```bash
 source /home/$USER/smp_workspace/devel/setup.bash
 ```
-#### (optinal) may you found some errors, so you can use the "Magic" of rosdep
+#### (optional) may you found some errors, so you can use the "Magic" of rosdep
 ```bash
 cd /home/$USER/smp_workspace/src
 rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
@@ -277,7 +285,7 @@ cd /home/$USER/smp_workspace/
 catkin build
 ```
 
-#### source your catkin worksapce
+#### source your catkin workspace
 ```bash
 source /home/$USER/smp_workspace/devel/setup.bash
 ```
