@@ -180,7 +180,7 @@ Configure your ROS environment [here](https://github.com/vivaldini/RMA_DC_UFSCar
 
 
 
-## Step 3- Install the MRS System
+## Step 3 - Install the MRS System
 
 Follow the instructions below to install the MRS System or go to the webpage [here](https://github.com/ctu-mrs/mrs_uav_system#installation) (on Installation topic):
 
@@ -217,14 +217,14 @@ Ensure you have the necessary tools installed for a smooth installation. Run the
 sudo apt-get install ros-noetic-amcl ros-noetic-costmap-converter ros-noetic-depthimage-to-laserscan ros-noetic-dynamic-reconfigure ros-noetic-ddynamic-reconfigure ros-noetic-ddynamic-reconfigure-dbgsym ros-noetic-ddynamic-reconfigure-python ros-noetic-geometry2 ros-noetic-hector-slam ros-noetic-move-base ros-noetic-move-base-flex ros-noetic-navigation ros-noetic-openslam-gmapping ros-noetic-rplidar-ros ros-noetic-slam-gmapping ros-noetic-spatio-temporal-voxel-layer ros-noetic-teb-local-planner ros-noetic-teleop-twist-keyboard ros-noetic-teleop-twist-joy ros-noetic-urg-node ros-noetic-rtabmap ros-noetic-rtabmap-ros ros-noetic-octomap ros-noetic-octomap-ros ros-noetic-octomap-rviz-plugins ros-noetic-octomap-server ros-noetic-octovis ros-noetic-imu-filter-madgwick ros-noetic-robot-localization ros-noetic-robot-pose-ekf ros-noetic-pointcloud-to-laserscan ros-noetic-rosbridge-server ros-noetic-map-server ros-noetic-realsense2-camera ros-noetic-realsense2-description ros-noetic-cmake-modules ros-noetic-velodyne-gazebo-plugins ros-noetic-ompl ros-noetic-navfn ros-noetic-dwa-local-planner ros-noetic-global-planner ros-noetic-costmap-2d ros-noetic-robot-self-filter ros-noetic-ros-numpy ros-noetic-pcl-ros ros-noetic-pcl-conversions ros-noetic-grid-map-costmap-2d ros-noetic-grid-map-ros ros-noetic-grid-map-filters ros-noetic-grid-map-visualization ros-noetic-tf2-tools pcl-tools python3-vcstool python3-catkin-tools python3-catkin-lint python3-pip python3-rosdep ros-noetic-gazebo-plugins ros-noetic-hector-gazebo ros-noetic-hector-gazebo-plugins
 ```
 
-### Package RMA
+## Step 4 - Package RMA
 ```bash 
 cd ~/workspace/src 
 git clone https://github.com/vivaldini/RMA.git 
 catkin build 
 bash ../devel/setup.bash
 ```
-#### Setting Gazebo to RMA
+### Setting Gazebo to RMA
 
 Start Gazebo by entering the following at the command prompt.
 
@@ -246,51 +246,7 @@ To add the directory to models and worlds:
    - Choose the paste ~/workspace/src/RMA/models
    - Close gazebo
 
-### Package The SuperMegaBot 
-
-#### source ROS Noetic
-```bash
-source /opt/ros/noetic/setup.bash
-```
-#### create the directories
-```bash
-mkdir -p /home/$USER/smp_workspace/src
-cd /home/$USER/smp_workspace/
-```
-#### initialize the catkin workspace
-```bash
-catkin init
-catkin config --extend /opt/ros/noetic
-catkin config -DCMAKE_BUILD_TYPE=Release
-```
-#### Navigate to the directory of src to clone the SuperMegaBot_SMB project
-```bash
-cd /home/$USER/smp_workspace/src
-git clone https://github.com/rrdpereira/SuperMegaBot_SMB.git
-```
-#### Build the project
-```bash
-cd /home/$USER/smp_workspace/
-catkin build
-```
-#### source your catkin workspace
-```bash
-source /home/$USER/smp_workspace/devel/setup.bash
-```
-#### (optional) may you found some errors, so you can use the "Magic" of rosdep
-```bash
-cd /home/$USER/smp_workspace/src
-rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
-cd /home/$USER/smp_workspace/
-catkin build
-```
-
-#### source your catkin workspace
-```bash
-source /home/$USER/smp_workspace/devel/setup.bash
-```
-
-## Step 6 - Test the environment
+### Test the RMA environment
 
 - UAV
 ```bash 
@@ -299,16 +255,57 @@ bash ~/workspace/src/RMA/src/start/start.sh
 ```
 
 - Multi UAVs run
-
 ```bash
 cd
 bash ~/workspace/src/RMA/src/start/multiStart.sh
 
 ```
 
+## Step 5 - Package the SuperMegaBot 
+
+
+### Create the directories
+```bash
+mkdir -p /home/$USER/smb_workspace/src
+cd /home/$USER/smb_workspace/
+```
+
+### Initialize the Catkin workspace
+```bash
+catkin init
+catkin config --extend /opt/ros/noetic
+catkin config -DCMAKE_BUILD_TYPE=Release
+```
+### Navigate to the directory of `src` to clone the `SuperMegaBot_SMB project`
+
+```bash
+cd /home/$USER/smb_workspace/src
+git clone https://github.com/rrdpereira/SuperMegaBot_SMB.git
+```
+
+### Build the project
+```bash
+cd /home/$USER/smb_workspace/
+catkin build
+```
+
+### Source your catkin workspace
+```bash
+source /home/$USER/smb_workspace/devel/setup.bash
+
+```
+### (optional) may you find some errors, so you can use the "Magic" of rosdep
+```bash
+cd /home/$USER/smb_workspace/src
+rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
+cd /home/$USER/smb_workspace/
+catkin build
+```
+
+
 ### Extra 1: Ways to stop the simulation
 
-Press “CTRL + a” and after “k” in the prompt.
+Press “CTRL + a” and after “k” in the terminal.
 
 If something remains open:
 
@@ -327,11 +324,11 @@ Communication with the MRS is done through ROS. If you are not yet aware, it is 
 ## Note:
     1. It is important to improve your expertise to do the tutorials. That will be passed as Frequency Activities.
     
-### Extra 3: Use algorithms and information available from MRS
+### Extra 3: Use algorithms and information available from the MRS System
 
-Repository 1: https://ctu-mrs.github.io/docs/system/uav_ros_interface.html#uavmanager
+Repository 1: [UAVManage](https://ctu-mrs.github.io/docs/system/uav_ros_interface.html#uavmanager)
 
-Repository 2: https://ctu-mrs.github.io/docs/software/mavros.html#used-topics-and-services
+Repository 2: [Used topics and services]https://ctu-mrs.github.io/docs/software/mavros.html#used-topics-and-services
 
 Topic Informations:
 
