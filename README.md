@@ -33,11 +33,11 @@ Create a bootable USB drive using a tool like "Rufus" on Windows or "Etcher" on 
 > [!WARNING]
 > Before you begin, make sure to back up your important data, as the installation of the operating system typically involves disk formatting.
 ```bash
- 0.2.1 - Connect the bootable USB drive to your computer.
+ 0.2.1  Connect the bootable USB drive to your computer.
  
- 0.2.2 - Restart your computer and access the boot menu (usually by pressing a specific key like F2, F12, or Delete during startup).
+ 0.2.2  Restart your computer and access the boot menu (usually by pressing a specific key like F2, F12, or Delete during startup).
  
- 0.2.3 - In the boot menu, choose the option corresponding to the USB drive you created and press Enter.
+ 0.2.3  In the boot menu, choose the option corresponding to the USB drive you created and press Enter.
 ```
 **0.3: Installing Ubuntu 20.04**
 ```bash
@@ -146,7 +146,7 @@ sudo apt-get update -y
 sudo apt-get install -y nautilus-open-terminal
 ```
 ```bash
-sudo apt-get install ssh libjpeg-dev libpng-dev libtiff-dev libx11-dev libavformat-dev libavdevice-dev libavcodec-dev libavutil-dev libswresample-dev libglu-dev libdc1394-22-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev python-pip3 git gitman tmux tmuxinator
+sudo apt-get install gedit ssh libjpeg-dev libpng-dev libtiff-dev libx11-dev libavformat-dev libavdevice-dev libavcodec-dev libavutil-dev libswresample-dev libglu-dev libdc1394-22-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev python-pip3 git gitman tmux tmuxinator
 
 ```
 Note. Case error check the package.
@@ -175,7 +175,7 @@ curl https://ctu-mrs.github.io/ppa-unstable/add_ros_ppa.sh | bash
 ```bash
 sudo apt install ros-noetic-desktop-full
 ```
-Configure your ROS environment [here](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
+Configure your ROS environment [here](https://github.com/vivaldini/RMA_DC_UFSCar/blob/main/ROS_Noetic/README.md)
 
 
 
