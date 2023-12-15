@@ -13,7 +13,7 @@ curl https://ctu-mrs.github.io/ppa-unstable/add_ros_ppa.sh | bash
 sudo apt install ros-noetic-desktop-full
 ```
 
-Now that you have ROS Noetic installed, configure your environment:
+Now that you have installed the ROS Noetic, configure your environment:
 
 
 ## Step 1: Initialize ROS Environment
@@ -62,7 +62,7 @@ You can use the Catkin build system to manage packages in ROS Noetic. To create 
 Ensure that `catkin` is installed. You can install it using the following command:
 
 ```bash
-   sudo apt-get install python-catkin-tools
+   sudo apt-get install python3-catkin-tools
 ```
 
 
