@@ -1,10 +1,5 @@
 # Configure your ROS Environment for ROS Noetic
 
-Make sure you have ROS Noetic installed on your system. Check your version in a terminal.
-
-```bash
-rosversion -d
-```
 If you haven't already, you can follow the installation instructions of `Step 0`.
 
 ## Step 0: Install the Robot Operating System (Noetic)
@@ -33,7 +28,7 @@ source /opt/ros/noetic/setup.bash
 > This command will load the necessary environment variables for ROS Noetic.
 
 > [!WARNING]
-> You will need to run this command in every new shell you open to have access to the ROS commands unless you add this line to your ".bashrc." 
+> You must run this command in every new shell you open to access the ROS commands unless you add this line to your ".bashrc." 
 
 ```bash
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
@@ -54,6 +49,11 @@ source /opt/ros/noetic/setup.bash
 
 Save the file and exit the text editor.
 
+Make sure you have ROS Noetic installed on your system. Check your version in a terminal.
+
+```bash
+rosversion -d
+```
 
 ## Step 2: Set up your Catkin Workspace
 
