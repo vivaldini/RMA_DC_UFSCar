@@ -59,6 +59,12 @@ rosversion -d
 
 You can use the Catkin build system to manage packages in ROS Noetic. To create a Catkin workspace, follow these steps:
 
+Ensure that `catkin` is installed. You can install it using the following command:
+
+```bash
+   sudo apt-get install python-catkin-tools
+```
+
 
 > [!NOTE]
 > You can use any name for your workspace; just replace 'catkin_ws' with 'your_workspace_name' in the commands. For example, if you want to name your workspace 'my_workspace,' you would replace 'catkin_ws' with 'my_workspace' in the commands.
